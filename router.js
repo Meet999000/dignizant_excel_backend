@@ -15,18 +15,14 @@ var modifyDataOfExcel = async (arrayItem) => {
     for (let j in index) {
       let obj = {};
       let arr = arrayItem[i].data[index[j]];
-      for (let k in arr) {
-        if (Number(k) === 0) {
-          obj = {
-            product: arr.Product,
-            user: arr.user,
-            price: arr.price,
-            discount_price: arr.discountprice,
-            category: arr.category,
-          };
-        }
-        modifyData.push(obj);
-      }
+      obj = {
+        product: arr.Product,
+        user: arr.user,
+        price: arr.price,
+        discount_price: arr.discountprice,
+        category: arr.category,
+      };
+      modifyData.push(obj);
     }
   }
   return modifyData;
